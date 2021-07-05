@@ -1,0 +1,147 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Components": [
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "Name": "box2",
+            "X": 0,
+            "Y": 0,
+            "Width": 800,
+            "Height": 480,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "DynamicGraph",
+            "DataSeed": 593766672,
+            "NumberOfValues": 100,
+            "MaxY": 100.0,
+            "MinY": 0.0,
+            "Precision": "1",
+            "UseCustomVisibleDataPointRange": false,
+            "FirstIndex": 0,
+            "LastIndex": 99,
+            "MapDataPointIndexToCustomValue": false,
+            "XAxisOffset": 0.0,
+            "XAxisScale": 1.0,
+            "InsertRandomValues": true,
+            "Alpha": 255,
+            "LabelSizeTop": 0,
+            "LabelSizeBottom": 0,
+            "LabelSizeLeft": 0,
+            "LabelSizeRight": 0,
+            "PaddingTop": 0,
+            "PaddingBottom": 0,
+            "PaddingLeft": 0,
+            "PaddingRight": 0,
+            "GraphType": "GraphWrapClear",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 20,
+                  "Green": 151,
+                  "Blue": 197
+                },
+                "Alpha": 255
+              }
+            ],
+            "Name": "dynamicGraph1",
+            "X": 240,
+            "Y": 103,
+            "Width": 320,
+            "Height": 240,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Image",
+            "RelativeFilename": "Untitled.png",
+            "Alpha": 255,
+            "Name": "image1",
+            "X": 24,
+            "Y": 12,
+            "Width": 736,
+            "Height": 457,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [],
+        "Name": "screen",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 12000
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "TouchGFXTemplate",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "screen",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "24": "LCD24bpp",
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project --project-file=../TouchGFXTemplate.ioc --platform=m7",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32H7"
+  },
+  "Version": "4.16.1"
+}

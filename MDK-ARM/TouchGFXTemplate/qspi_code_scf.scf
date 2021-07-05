@@ -1,0 +1,37 @@
+#! armcc -E 
+
+
+#define m_stmflash_start				0X08000000		//m_stmflash(STM32内部FLASH)域起始地址
+#define m_stmflash_size					0X20000			//m_stmflash(STM32内部FLASH)大小,H750是128KB
+
+#define m_qspiflash_start				0X90000000		//m_qspiflash(外扩QSPI FLASH)域起始地址
+#define m_qspiflash_size				0X800000		//m_qspiflash(外扩QSPI FLASH)大小,W25Q64是8MB
+ 
+#define m_stmsram_start					0X24000000		//m_stmsram(STM32内部RAM)域起始地址,定义在D1,AXI SRAM
+#define m_stmsram_size					0X80000			//m_stmsram(STM32内部RAM)大小,AXI SRAM共512KB
+
+  
+ 
+LR_m_stmflash m_stmflash_start m_stmflash_size {		//LR_m_stmflash加载域
+  ER_m_stmflash m_stmflash_start m_stmflash_size {		//ER_m_stmfalsh运行域,起始地址为:m_stmflash_start,大小为:m_stmflash_size 
+    *.o (RESET, +First)									//优先(+FIRST)将RESET(中断向量表)段放这个域,实际上就是把中断向量表拷贝到m_stmflash_start
+														//RESET是一个段名,表示中断向量表(在.s文件定义);+FIRST表示时第一个要加载的.
+	* (InRoot$$Sections)								//将所有的库段(C/C++标准库)放在root region.如__main.o,__scatter*.o等
+	* (Veneer$$Code) 
+	stm32h7xx_hal_gpio.o
+	stm32h7xx_hal_rcc.o
+	stm32h7xx_hal_rcc_ex.o
+    startup_stm32h750xx.o
+    system_stm32h7xx.o
+
+  } 
+  RW_m_stmsram m_stmsram_start m_stmsram_size {			//RW_m_stmsram运行域,起始地址为:m_stmsram_start,大小为:m_stmsram_size.
+   .ANY (+RW +ZI)										//将所有用到的RAM都放在这个区域
+  }
+}
+
+LR_m_qspiflash m_qspiflash_start m_qspiflash_size {		//LR_m_qspiflash加载域
+   ER_m_qspiflash m_qspiflash_start m_qspiflash_size {	//ER_m_qspiflash加载域,起始地址为:m_qspiflash_start,大小为:m_qspiflash_size 
+    .ANY (+RO) 											//将只读数据(+RO)放这个域,任意分配.相当于程序就是存放在这个域的.
+  }															 
+}

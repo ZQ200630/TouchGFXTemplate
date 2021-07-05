@@ -1,0 +1,15 @@
+touchgfxtemplate\typedtextdatabase.o: ../touchgfx/generated/texts/src/typedtextdatabase.cpp
+touchgfxtemplate\typedtextdatabase.o: ../middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp
+touchgfxtemplate\typedtextdatabase.o: E:\Keil5\ARM\ARMCC\Bin\..\include\cassert
+touchgfxtemplate\typedtextdatabase.o: E:\Keil5\ARM\ARMCC\Bin\..\include\assert.h
+touchgfxtemplate\typedtextdatabase.o: ../middlewares/st/touchgfx/framework/include/touchgfx/Font.hpp
+touchgfxtemplate\typedtextdatabase.o: ../middlewares/st/touchgfx/framework/include/touchgfx/Unicode.hpp
+touchgfxtemplate\typedtextdatabase.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+touchgfxtemplate\typedtextdatabase.o: ../middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp
+touchgfxtemplate\typedtextdatabase.o: E:\Keil5\ARM\ARMCC\Bin\..\include\assert.h
+touchgfxtemplate\typedtextdatabase.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+touchgfxtemplate\typedtextdatabase.o: ../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp
+touchgfxtemplate\typedtextdatabase.o: ../middlewares/st/touchgfx/framework/include/touchgfx/Texts.hpp
+touchgfxtemplate\typedtextdatabase.o: ../touchgfx/generated/fonts/include/fonts/GeneratedFont.hpp
+touchgfxtemplate\typedtextdatabase.o: ../middlewares/st/touchgfx/framework/include/touchgfx/ConstFont.hpp
+touchgfxtemplate\typedtextdatabase.o: ../touchgfx/generated/texts/include/texts/TypedTextDatabase.hpp
